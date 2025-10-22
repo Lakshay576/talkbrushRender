@@ -35,6 +35,7 @@ export const loginUser = async (req, res) => {
         })
             .status(200)
             .json({
+                token,
                 user: {
                     fullName: user.fullName,
                     email: user.email,
@@ -121,4 +122,5 @@ export const updateProfile = async (req, res) => {
         console.error("Update Profile failed: ", error);
         res.status(500).json({ message: "Server error", error: error.message });
     }
+
 }
